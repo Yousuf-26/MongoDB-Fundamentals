@@ -1,0 +1,22 @@
+Common terms in NOSQL
+
+1. document -> record
+2. collection - group of records
+3. Database - group of collections
+4. Cluster - multiple computers working together is called a Cluster
+
+
+
+Basic Commands in MongoDB using mongosh
+
+use - Create a new database
+createCollection() - can create a collection - db.createCollection("name the collection")
+db.posts.insertOne({"title": "Post 1"}) - helps insert a document
+db.posts.insertMany() - helps insert multiple documents
+db.posts.find() - This method accepts a query object. If left empty, all documents will be returned.
+db.posts.findOne() - This method accepts a query object. If left empty, it will return the first document it finds.
+db.posts.find({}, {_id: 0, title: 1, date: 1}) -  will only display the title and date fields in the results,We use a 1 to include a field and 0 to exclude a field.
+db.posts.updateOne( { title: "Post Title 1" }, { $set: { likes: 2 } } )  - Now let's update the "likes" on this post to 2. To do this, we need to use the $set operator.
+{ upsert: true } -If you would like to insert the document if it is not found, you can use the upsert option
+db.posts.deleteOne({ title: "Post Title 5" }) -The deleteOne() method will delete the first document that matches the query provided.
+db.posts.deleteMany({ category: "Technology" }) -
